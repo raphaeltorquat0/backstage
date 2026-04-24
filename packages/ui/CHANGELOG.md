@@ -1,5 +1,26 @@
 # @backstage/ui
 
+## 0.15.0-next.1
+
+### Patch Changes
+
+- 76635ae: Disabled `Card` scroll shadow in browsers that don't support `animation-timeline: scroll()`. Prevents the shadow from being always visible over the `CardBody` when there's nothing to scroll or the body is not scrolled.
+
+  **Affected components:** Card
+
+- c96e2b3: Added `description`, `tags`, and `metadata` props to the `Header` component. The `description` prop accepts a markdown string with support for inline links. The `tags` prop renders a row of text or link items above the title. The `metadata` prop renders key-value pairs below the description. The `breadcrumbs` prop has been deprecated and will be removed in a future release.
+
+  **Affected components:** Header
+
+- f635139: Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
+- 23ee789: Added invalid-state styling for Checkbox and corresponding Storybook variants for verification.
+
+  **Affected components:** Checkbox, CheckboxGroup
+
+- df705bb: Fixed external URLs in BUI link components being rewritten as in-app paths when the app is served under a non-root base path. Absolute URLs (`http://`, `https://`, `//`, `mailto:`, `tel:`) are now passed through unchanged. Internal `href` values are resolved against the current `basename` exactly once, which also fixes a latent issue where internal link clicks under a non-root base path could navigate to a URL with the `basename` prefix doubled.
+
+  **Affected components:** ButtonLink, Card, Link, Menu, Tab, Table, Tag
+
 ## 0.15.0-next.0
 
 ### Minor Changes
